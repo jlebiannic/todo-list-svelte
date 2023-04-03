@@ -10,13 +10,14 @@
 	}
 
 	function onCocheTodo(event: CustomEvent<onCocheTodoEvent>) {
+		console.log("event", event);
 		alert("onCocheTodo " + event.detail.onCocheTodo);
 	}
 
 	function onSupprimeTodo(event: CustomEvent<onSupprimeTodoEvent>) {
-		alert("onSupprimeTodo" + event.detail.onSupprimeTodo);
+		alert("onSupprimeTodo " + event.detail.onSupprimeTodo);
 	}
 </script>
 
 <input bind:value={libelleTodo} /><button on:click={ajouteTodo}>Ajouter</button>
-<TodoList {todos} on:onCocheTodo={onCocheTodo} on:onCocheTodo={onSupprimeTodo} />
+<TodoList {todos} on:onCocheTodo={onCocheTodo} on:onSupprimeTodo={onSupprimeTodo} />
