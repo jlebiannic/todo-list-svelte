@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Todo } from "../model/Todo";
-	import type { onCocheTodoEvent, onSupprimeTodoEvent } from "./TodoItem.svelte";
+	import type { TodoEvent } from "./TodoItem.svelte";
 	import TodoList from "./TodoList.svelte";
 
 	let libelleTodo = "";
@@ -9,13 +9,13 @@
 		todos = [...todos, new Todo(todos.length, libelleTodo)];
 	}
 
-	function onCocheTodo(event: CustomEvent<onCocheTodoEvent>) {
+	function onCocheTodo(event: CustomEvent<TodoEvent>) {
 		console.log("event", event);
-		alert("onCocheTodo " + event.detail.onCocheTodo);
+		alert("onCocheTodo " + event.detail.todoId);
 	}
 
-	function onSupprimeTodo(event: CustomEvent<onSupprimeTodoEvent>) {
-		alert("onSupprimeTodo " + event.detail.onSupprimeTodo);
+	function onSupprimeTodo(event: CustomEvent<TodoEvent>) {
+		alert("onSupprimeTodo " + event.detail.todoId);
 	}
 </script>
 

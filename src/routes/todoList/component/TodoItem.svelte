@@ -1,10 +1,6 @@
 <script context="module" lang="ts">
-	export interface onCocheTodoEvent {
-		onCocheTodo: number;
-	}
-
-	export interface onSupprimeTodoEvent {
-		onSupprimeTodo: number;
+	export interface TodoEvent {
+		todoId: number;
 	}
 </script>
 
@@ -13,15 +9,14 @@
 	import type { Todo } from "../model/Todo";
 
 	export let todo: Todo;
-	const dispatch1 = createEventDispatcher<onCocheTodoEvent>();
-	const dispatch2 = createEventDispatcher<onSupprimeTodoEvent>();
+	const dispatch = createEventDispatcher();
 
 	function onCocheTodo(todoId: number) {
-		dispatch1("onCocheTodo", todoId);
+		dispatch("onCocheTodo", { todoId });
 	}
 
 	function onSupprimeTodo(todoId: number) {
-		dispatch2("onSupprimeTodo", todoId);
+		dispatch("onSupprimeTodo", { todoId });
 	}
 </script>
 
