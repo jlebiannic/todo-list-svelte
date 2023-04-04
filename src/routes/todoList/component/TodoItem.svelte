@@ -20,14 +20,7 @@
 	}
 </script>
 
-<input
-	type="checkbox"
-	on:click={(e) => {
-		e.preventDefault();
-		onCocheTodo(todo.id);
-	}}
-	checked={todo.coche}
-/>
+<input type="checkbox" bind:checked={todo.coche} />
 <span>{todo.libelle}</span>
 <!-- Icone poubelle -->
 <span

@@ -7,6 +7,6 @@
 
 <ul>
 	{#each todos as todo (todo.id)}
-		<li><TodoItem {todo} on:onCocheTodo on:onSupprimeTodo /></li>
+		<li><TodoItem {todo} on:onSupprimeTodo /></li>
 	{/each}
 </ul>
